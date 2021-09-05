@@ -21,11 +21,6 @@ namespace BUDuGET.Model
             Id = id;
             Description = description;
             calendarService = _calendarService;
-
-            FocusDateFrom = DateTime.Today;
-            FocusDateTo = DateTime.Today;
-
-            FocusDateFrom = FocusDateFrom.AddDays(-1);
         }
 
         public string DisplayedName
@@ -58,6 +53,57 @@ namespace BUDuGET.Model
                 }
 
                 return sum.ToString() + " PLN";
+            }
+        }
+
+        public string IncomeSum
+        {
+            get
+            {
+                double sum = 0;
+
+                foreach (CalendarEvent ev in CalendarEvents)
+                {
+                    if (ev.Balance >= 0)
+                    {
+                        sum += ev.Balance;
+                    }
+                }
+
+                return sum.ToString() + " PLN";
+            }
+        }
+
+        public string OutcomeSum
+        {
+            get
+            {
+                double sum = 0;
+
+                foreach (CalendarEvent ev in CalendarEvents)
+                {
+                    if (ev.Balance < 0)
+                    {
+                        sum += ev.Balance;
+                    }
+                }
+
+                return sum.ToString() + " PLN";
+            }
+        }
+
+        public string DailyAverageBalance
+        {
+            get
+            {
+                double sum = 0;
+
+                foreach (CalendarEvent ev in CalendarEvents)
+                {
+                    sum += ev.Balance;
+                }
+
+                return (sum / (FocusDateTo - FocusDateFrom).Days).ToString("0.##") + " PLN";
             }
         }
     }

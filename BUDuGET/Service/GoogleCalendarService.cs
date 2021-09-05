@@ -61,7 +61,7 @@ namespace BUDuGET.Service
             request.SingleEvents = true;
             request.MaxResults = 10;
             request.TimeMin = dateFrom;
-            request.TimeMax = dateTo;
+            request.TimeMax = dateTo.AddDays(1);
             request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
 
             List<CalendarEvent> calendarEvents = new List<CalendarEvent>();
@@ -72,7 +72,7 @@ namespace BUDuGET.Service
             {
                 if (ev.Summary != null && (ev.Summary.StartsWith("!") || ev.Summary.StartsWith("+") || ev.Summary.StartsWith("-")))
                 {
-                    calendarEvents.Add(new CalendarEvent(ev.Id, ev.Summary));
+                    calendarEvents.Add(new CalendarEvent(ev.Id, ev.Summary, ev.Start.DateTime, ev.End.DateTime));
                 }
             }
             

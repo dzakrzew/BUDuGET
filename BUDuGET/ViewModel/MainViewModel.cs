@@ -31,6 +31,10 @@ namespace BUDuGET.ViewModel
             set
             {
                 selectedCalendar = value;
+                
+                FocusDateFrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                FocusDateTo = DateTime.Today;
+
                 onPropertyChange(nameof(SelectedCalendar));
             }
         }

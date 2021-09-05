@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:BUDuGET.ViewModel"
         xmlns:local="clr-namespace:BUDuGET"
         mc:Ignorable="d"
-        Title="BUDuGET" Height="450" Width="800">
+        Title="BUDuGET" Height="600" Width="800" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>

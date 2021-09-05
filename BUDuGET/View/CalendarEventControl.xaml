@@ -8,17 +8,20 @@
              d:DesignHeight="50" d:DesignWidth="800">
     <UserControl.Style>
         <Style TargetType="UserControl">
-            <Setter Property="BorderBrush" Value="Black"></Setter>
-            <Setter Property="BorderThickness" Value="1"></Setter>
             <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+            <Setter Property="Background" Value="#FFE4E4E4"/>
         </Style>
     </UserControl.Style>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" FontSize="30" TextAlignment="Center" Text="{Binding DisplayedBalance}"></TextBlock>
-        <TextBlock Grid.Column="1" Text="{Binding Description}" FontSize="20"></TextBlock>
+        <TextBlock Grid.Column="0" FontSize="24" Margin="5,0,10,0" TextAlignment="Right" Text="{Binding DisplayedBalance}"></TextBlock>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="{Binding Description}" FontSize="20"></TextBlock>
+            <TextBlock Text="{Binding DisplayedDate}" FontSize="12"></TextBlock>
+        </StackPanel>
     </Grid>
 </UserControl>
