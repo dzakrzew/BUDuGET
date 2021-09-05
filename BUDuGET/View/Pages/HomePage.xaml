@@ -46,6 +46,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <TextBlock TextAlignment="Center" Margin="0,20,0,0" Text="Bilans"></TextBlock>
@@ -62,6 +63,10 @@
             <StackPanel Grid.Column="3">
                 <TextBlock TextAlignment="Center" Margin="0,20,0,0" Text="Bilans dzienny"></TextBlock>
                 <TextBlock TextAlignment="Center" Margin="0,0,0,0" Text="{Binding SelectedCalendar.DailyAverageBalance}" FontWeight="Bold"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="4">
+                <TextBlock TextAlignment="Center" Margin="0,20,0,0" Text="Suma godzin"></TextBlock>
+                <TextBlock TextAlignment="Center" Margin="0,0,0,0" Text="{Binding SelectedCalendar.HoursSum}" FontWeight="Bold"></TextBlock>
             </StackPanel>
         </Grid>
     </StackPanel>

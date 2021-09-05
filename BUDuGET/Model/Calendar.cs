@@ -92,6 +92,24 @@ namespace BUDuGET.Model
             }
         }
 
+        public string HoursSum
+        {
+            get
+            {
+                double sum = 0;
+
+                foreach (CalendarEvent ev in CalendarEvents)
+                {
+                    if (ev.Type == CalendarEventTypeEnum.HourlyEarnings)
+                    { 
+                        sum += ev.Hours;
+                    }
+                }
+
+                return sum.ToString();
+            }
+        }
+
         public string DailyAverageBalance
         {
             get
