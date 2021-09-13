@@ -64,14 +64,17 @@ namespace BUDuGET.Model
         
         private void applyFilters()
         {
-            string pat = @"(?<type>[\!\+\-])(?<price>\d+(\.\d\d?)?)\s(?<description>.*)";
+            string pat = @"(?<type>[\!\+\-])(?<price>\d+(\.\d\d)?)\s(?<description>.*)";
             Regex re = new Regex(pat);
 
             Match m = re.Match(Summary);
 
             if (m.Success) {
-                Balance = double.Parse(m.Groups["price"].Value);
-                Price = double.Parse(m.Groups["price"].Value);
+                string val = m.Groups["price"].Value.Replace('.', ',');
+                double dVal = double.Parse(val, System.Globalization.NumberStyles.Any);
+
+                Balance = dVal;
+                Price = dVal;
                 Description = m.Groups["description"].Value;
 
                 string type = m.Groups["type"].Value;
