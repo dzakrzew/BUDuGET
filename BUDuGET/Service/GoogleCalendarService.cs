@@ -49,7 +49,7 @@ namespace BUDuGET.Service
 
             foreach (CalendarListEntry entry in calendarList.Items)
             {
-                calendars.Add(new Model.Calendar(entry.Id, entry.Description, this));
+                calendars.Add(new Model.Calendar(entry.Id, entry.Summary, this));
             }
 
             return calendars;

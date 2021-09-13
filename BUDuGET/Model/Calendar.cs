@@ -25,7 +25,7 @@ namespace BUDuGET.Model
 
         public string DisplayedName
         {
-            get { return string.Format("{0} {1}", Id, Description);  }
+            get { return string.Format("{0} ({1})", Description, Id);  }
         }
 
         public List<CalendarEvent> calendarEvents;

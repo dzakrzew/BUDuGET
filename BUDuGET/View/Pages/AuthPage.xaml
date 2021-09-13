@@ -15,7 +15,7 @@
                 <TextBlock Text="Wybierz kalendarz:"></TextBlock>
                 <ComboBox 
                     ItemsSource="{Binding Path=AvailableCalendars, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    DisplayMemberPath="Id"
+                    DisplayMemberPath="DisplayedName"
                     SelectedItem="{Binding SelectedCalendar}"
                 />
                 <Button Width="200" Margin="0,20,0,0" Command="{Binding SelectCalendar}">Dalej</Button>
