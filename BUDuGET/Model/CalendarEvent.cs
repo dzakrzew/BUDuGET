@@ -30,7 +30,7 @@ namespace BUDuGET.Model
         {
             get
             {
-                return Balance.ToString() + " PLN";
+                return Balance.ToString("0.##") + " PLN";
             }
         }
 

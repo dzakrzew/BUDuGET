@@ -52,7 +52,7 @@ namespace BUDuGET.Model
                     sum += ev.Balance;
                 }
 
-                return sum.ToString() + " PLN";
+                return sum.ToString("0.##") + " PLN";
             }
         }
 
@@ -70,7 +70,7 @@ namespace BUDuGET.Model
                     }
                 }
 
-                return sum.ToString() + " PLN";
+                return sum.ToString("0.##") + " PLN";
             }
         }
 
@@ -88,7 +88,7 @@ namespace BUDuGET.Model
                     }
                 }
 
-                return sum.ToString() + " PLN";
+                return sum.ToString("0.##") + " PLN";
             }
         }
 
